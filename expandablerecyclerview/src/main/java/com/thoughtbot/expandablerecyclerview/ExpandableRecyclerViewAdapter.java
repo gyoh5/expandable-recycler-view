@@ -23,7 +23,7 @@ public abstract class ExpandableRecyclerViewAdapter<GVH extends GroupViewHolder,
     private static final String EXPAND_STATE_MAP = "expandable_recyclerview_adapter_expand_state_map";
 
     protected ExpandableList expandableList;
-    private ExpandCollapseController expandCollapseController;
+    protected ExpandCollapseController expandCollapseController;
 
     private OnGroupClickListener groupClickListener;
     private GroupExpandCollapseListener expandCollapseListener;
