@@ -52,7 +52,7 @@ public class ExpandCollapseController {
      */
     public boolean isGroupExpanded(ExpandableGroup group) {
         int groupIndex = expandableList.groups.indexOf(group);
-        return groupIndex == -1 ? false : expandableList.expandedGroupIndexes[groupIndex];
+        return groupIndex < 0 ? false : expandableList.expandedGroupIndexes[groupIndex];
     }
 
     /**
@@ -61,7 +61,7 @@ public class ExpandCollapseController {
      */
     public boolean isGroupExpanded(int flatPos) {
         ExpandableListPosition listPosition = expandableList.getUnflattenedPosition(flatPos);
-        return expandableList.expandedGroupIndexes[listPosition.groupPos];
+        return listPosition.groupPos < 0 ? false : expandableList.expandedGroupIndexes[listPosition.groupPos];
     }
 
     /**
